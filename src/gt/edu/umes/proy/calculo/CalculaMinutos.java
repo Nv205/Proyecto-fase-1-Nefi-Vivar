@@ -6,7 +6,7 @@ public class CalculaMinutos {
         LogicaDelNegocio logica = new LogicaDelNegocio();
 
         if (!logica.validar(args)) {
-            System.out.println("Error: debe ingresar 6 parámetros enteros "
+            System.out.println("Error: debe ingresar 5 parámetros enteros "
                     + "(meses semanas días horas minutos).");
             return;
         }
