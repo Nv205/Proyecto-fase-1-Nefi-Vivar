@@ -19,7 +19,8 @@ public class LogicaDelNegocio {
         return true;
     }
 
-    // Meses (30 días), semanas, días, horas, minutos -> segundos
+    // Meses (30 días), semanas, días, horas, minutos -> segundos 
+    // 23/10/26
     public long calcularSegundos(int meses, int semanas, int dias, int horas, int minutos) {
         long segundos = 0;
         segundos += (long) meses * 30 * 24 * 60 * 60;
