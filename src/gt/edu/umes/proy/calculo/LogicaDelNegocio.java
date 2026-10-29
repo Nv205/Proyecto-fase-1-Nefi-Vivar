@@ -5,20 +5,29 @@ public class LogicaDelNegocio {
     public static final int CANTIDAD_PARAMETROS = 5;
 
     // Valida que haya 5 parámetros y que todos sean enteros
-    public boolean validar(String[] args) {
+    public void validarOLanzar(String[] args) {
         if (args == null || args.length != CANTIDAD_PARAMETROS) {
-            return false;
+        	throw new IllegalArgumentException("Se requieren 5 parámetros");
         }
         for (String arg : args) {
             try {
                 Integer.parseInt(arg.trim());
             } catch (NumberFormatException e) {
-                return false;
+            	throw new IllegalArgumentException("No es un entero: " + arg, e);
             }
         }
-        return true;
+        
     }
-
+    
+    public boolean validar(String[] args) {
+        try {
+            validarOLanzar(args);
+            return true;
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
+    }
+    
     // Meses (30 días), semanas, días, horas, minutos -> segundos 
     // 23/10/26
     public long calcularSegundos(int meses, int semanas, int dias, int horas, int minutos) {

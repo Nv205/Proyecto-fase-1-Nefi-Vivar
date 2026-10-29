@@ -20,4 +20,7 @@ public class CalculaMinutos {
 
         System.out.println("Total en segundos: " + total);
     }
+    
+    
 }
+
